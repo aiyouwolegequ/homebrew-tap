@@ -16,7 +16,10 @@ class Calctokens < Formula
   end
 
   def install
-    bin.install cached_download
+    # Copy to bin with correct name
+    dst = bin/"calctokens"
+    dst.chmod(0755)
+    IO.copy_stream(cached_download, dst)
   end
 
   test do
