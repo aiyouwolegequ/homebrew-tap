@@ -7,6 +7,10 @@ class Calctokens < Formula
   sha256 "ad69e34479cf16869884e31d3c3f8ceb4deeecea97f909e671d1fd29deec3c15"
 
   def install
+    # Allow Homebrew-installed binaries in PATH
+    ENV.delete("HOMEBREW_FORBID_PACKAGES_FROM_PATHS")
+    ENV.append_path "PATH", "#{HOMEBREW_PREFIX}/bin"
+
     system "/opt/homebrew/bin/cargo", "build", "--release"
     bin.install "target/release/calctokens"
   end
