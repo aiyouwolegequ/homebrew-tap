@@ -17,9 +17,13 @@ class Calctokens < Formula
     on_linux do
       bin.install "calctokens"
     end
-    on_macos do
-      raise "macOS/arm64: use 'cargo install --git https://github.com/aiyouwolegequ/CalcTokens --tag v0.3.2' instead"
-    end
+  end
+
+  def caveats
+    <<~EOS
+      macOS/arm64: calctokens must be built from source.
+      Run: cargo install --git https://github.com/aiyouwolegequ/CalcTokens --tag v0.3.2
+    EOS
   end
 
   test do
