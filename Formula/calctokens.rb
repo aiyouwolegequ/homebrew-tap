@@ -16,16 +16,7 @@ class Calctokens < Formula
   end
 
   def install
-    # Find the downloaded binary in staging (might have release-asset filename)
-    cached_file = staged_path.children.find { |f| f.file? && f.basename.to_s.match?(/calctokens/) }
-    raise "calctokens binary not found in staging" unless cached_file
-
-    # Rename to expected name if needed
-    if cached_file.basename.to_s != "calctokens"
-      FileUtils.cp cached_file, staged_path/"calctokens"
-    end
-
-    bin.install staged_path/"calctokens"
+    bin.install cached_download
   end
 
   test do
