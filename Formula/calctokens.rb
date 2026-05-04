@@ -11,6 +11,7 @@ class Calctokens < Formula
   on_macos do
     url "https://github.com/aiyouwolegequ/CalcTokens/archive/refs/tags/v0.3.2.tar.gz"
     sha256 "ad69e34479cf16869884e31d3c3f8ceb4deeecea97f909e671d1fd29deec3c15"
+    skip_install "macOS must build from source - use cargo install"
   end
 
   def install
@@ -21,8 +22,8 @@ class Calctokens < Formula
 
   def caveats
     <<~EOS
-      macOS/arm64: calctokens must be built from source.
-      Run: cargo install --git https://github.com/aiyouwolegequ/CalcTokens --tag v0.3.2
+      macOS/arm64: build from source with:
+        cargo install --git https://github.com/aiyouwolegequ/CalcTokens --tag v0.3.2
     EOS
   end
 
