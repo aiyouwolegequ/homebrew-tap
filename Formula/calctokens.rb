@@ -7,8 +7,7 @@ class Calctokens < Formula
   sha256 "ad69e34479cf16869884e31d3c3f8ceb4deeecea97f909e671d1fd29deec3c15"
 
   def install
-    ENV.append_path "PATH", HOMEBREW_PREFIX/"bin"
-    system "cargo", "build", "--release", "--locked"
+    system "/opt/homebrew/bin/cargo", "build", "--release", "--locked"
     bin.install "target/release/calctokens"
   end
 
