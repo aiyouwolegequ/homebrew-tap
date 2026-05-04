@@ -16,12 +16,16 @@ class Calctokens < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      # Rename macOS asset to expected binary name before install
-      cachedownload = staged_path.children.find { |f| f.basename.to_s.include?("macos-arm64") }
-      cachedownload.rename(staged_path/"calctokens") if cachedownload
+    # Find the downloaded binary in staging (might have release-asset filename)
+    cached_file = staged_path.children.find { |f| f.file? && f.basename.to_s.match?(/calctokens/) }
+    raise "calctokens binary not found in staging" unless cached_file
+
+    # Rename to expected name if needed
+    if cached_file.basename.to_s != "calctokens"
+      FileUtils.cp cached_file, staged_path/"calctokens"
     end
-    bin.install "calctokens"
+
+    bin.install staged_path/"calctokens"
   end
 
   test do
