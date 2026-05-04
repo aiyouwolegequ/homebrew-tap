@@ -5,23 +5,8 @@ class Calctokens < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.1.0/calctokens-macos-arm64"
-      sha256 "use actual sha256 after upload"
-    end
-    on_intel do
-      url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.1.0/calctokens-macos-x86_64"
-      sha256 "use actual sha256 after upload"
-    end
-  end
-
-  on_linux do
-    on_x86_64 do
-      url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.1.0/calctokens-linux-x86_64"
-      sha256 "use actual sha256 after upload"
-    end
-    on_arm64 do
-      url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.1.0/calctokens-linux-arm64"
-      sha256 "use actual sha256 after upload"
+      url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.1.0/calctokens"
+      sha256 "e4bc52258875002590e8e5e06ae20623f6e2f8af02906d0882cb94c4d59ba7af"
     end
   end
 
