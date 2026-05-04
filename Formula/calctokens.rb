@@ -15,14 +15,21 @@ class Calctokens < Formula
     sha256 "89bf5f1b217ac4d1661b9ce5757a48517a8281cfd1044b7b3d667b311264ae83"
   end
 
+  def prelude
+    puts "DEBUG: prelude running"
+    puts "DEBUG: OS.mac?=#{OS.mac?}"
+    puts "DEBUG: Hardware::CPU.arm?=#{Hardware::CPU.arm?}"
+    puts "DEBUG: staged_path=#{staged_path}"
+    puts "DEBUG: staged_path children=#{Dir.entries(staged_path).inspect}"
+    super
+  end
+
   def install
+    puts "DEBUG: install running"
     puts "DEBUG: cached_download=#{cached_download}"
     puts "DEBUG: cached_download.exist?=#{cached_download.exist?}"
     puts "DEBUG: bin=#{bin}"
-    puts "DEBUG: staged_path=#{staged_path}"
-    puts "DEBUG: staged_path.children=#{staged_path.children.inspect}"
     dst = bin/"calctokens"
-    puts "DEBUG: dst=#{dst}"
     FileUtils.cp(cached_download, dst)
     dst.chmod(0755)
   end
