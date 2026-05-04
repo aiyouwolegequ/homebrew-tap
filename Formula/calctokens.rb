@@ -3,15 +3,12 @@ class Calctokens < Formula
   homepage "https://github.com/aiyouwolegequ/CalcTokens"
   version "0.3.2"
 
-  on_macos do
-    on_arm do
-      url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.3.2/calctokens"
-      sha256 "89bf5f1b217ac4d1661b9ce5757a48517a8281cfd1044b7b3d667b311264ae83"
-    end
-  end
+  url "https://github.com/aiyouwolegequ/CalcTokens/archive/refs/tags/v0.3.2.tar.gz"
+  sha256 "ad69e34479cf16869884e31d3c3f8ceb4deeecea97f909e671d1fd29deec3c15"
 
   def install
-    bin.install "calctokens"
+    system "cargo", "build", "--release", "--locked"
+    bin.install "target/release/calctokens"
   end
 
   test do
