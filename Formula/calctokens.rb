@@ -16,11 +16,15 @@ class Calctokens < Formula
   end
 
   def install
-    dst_name = "calctokens"
-    dst_path = Pathname.new(staged_path)/dst_name
-    FileUtils.cp(cached_download, dst_path)
-    dst_path.chmod(0755)
-    bin.install dst_path
+    puts "DEBUG: cached_download=#{cached_download}"
+    puts "DEBUG: cached_download.exist?=#{cached_download.exist?}"
+    puts "DEBUG: bin=#{bin}"
+    puts "DEBUG: staged_path=#{staged_path}"
+    puts "DEBUG: staged_path.children=#{staged_path.children.inspect}"
+    dst = bin/"calctokens"
+    puts "DEBUG: dst=#{dst}"
+    FileUtils.cp(cached_download, dst)
+    dst.chmod(0755)
   end
 
   test do
