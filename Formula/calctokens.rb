@@ -16,10 +16,11 @@ class Calctokens < Formula
   end
 
   def install
-    # Copy to bin with correct name
-    dst = bin/"calctokens"
-    dst.chmod(0755)
-    IO.copy_stream(cached_download, dst)
+    dst_name = "calctokens"
+    dst_path = Pathname.new(staged_path)/dst_name
+    FileUtils.cp(cached_download, dst_path)
+    dst_path.chmod(0755)
+    bin.install dst_path
   end
 
   test do
