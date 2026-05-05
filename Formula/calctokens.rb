@@ -17,4 +17,8 @@ class Calctokens < Formula
     FileUtils.cp(cached_download, bin_path)
     bin_path.chmod(0755)
   end
+
+  test do
+    system "#{bin}/calctokens", "--help"
+  end
 end
