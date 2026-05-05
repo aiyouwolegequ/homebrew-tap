@@ -7,7 +7,7 @@ class Calctokens < Formula
     sha256: "57ed00c7e52db726004c1c77fb92c9423778d992cbac1d89c1abf335a29f4ece"
 
   def install
-    bin.install "calctokens-macos-arm64"
+    bin.install "calctokens-macos-arm64" => "calctokens"
   end
 
   test do
