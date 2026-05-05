@@ -1,11 +1,11 @@
-# homebrew-tap
+# homebrew-calctokens
 
 Homebrew tap for [CalcTokens](https://github.com/aiyouwolegequ/CalcTokens).
 
 ## Install
 
 ```bash
-brew install aiyouwolegequ/tap/calctokens
+brew install aiyouwolegequ/homebrew-calctokens/calctokens
 ```
 
 Works on macOS (arm64) and Linux (x86_64).
@@ -20,5 +20,5 @@ Works on macOS (arm64) and Linux (x86_64).
 
 ```bash
 brew uninstall calctokens
-brew untap aiyouwolegequ/tap
+brew untap aiyouwolegequ/homebrew-calctokens
 ```
