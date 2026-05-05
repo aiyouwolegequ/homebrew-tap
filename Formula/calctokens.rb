@@ -12,13 +12,8 @@ class Calctokens < Formula
   end
 
   def install
-    puts "DEBUG: install running, staged_path=#{staged_path}"
-    puts "DEBUG: contents: #{Dir.foreach(staged_path) { |f| puts f }.to_a}"
-    super
-  end
-
-  def post_install
-    puts "DEBUG: post_install running"
-    puts "DEBUG: bin contents: #{File.join(bin, 'calctokens')}"
+    dst = bin/"calctokens"
+    FileUtils.cp(cached_download, dst)
+    dst.chmod(0755)
   end
 end
