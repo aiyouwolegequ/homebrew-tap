@@ -1,24 +1,14 @@
-# homebrew-calctokens
+# ⚠️ DEPRECATED — Use [homebrew-calctokens](https://github.com/aiyouwolegequ/homebrew-calctokens) Instead
 
-Homebrew tap for [CalcTokens](https://github.com/aiyouwolegequ/CalcTokens).
+This tap is no longer maintained. All formula updates are now published to:
 
-## Install
+**https://github.com/aiyouwolegequ/homebrew-calctokens**
 
 ```bash
+# Remove this deprecated tap
+brew untap aiyouwolegequ/tap
+
+# Use the canonical tap instead
 brew install aiyouwolegequ/homebrew-calctokens/calctokens
-```
-
-Works on macOS (arm64) and Linux (x86_64).
-
-## Formulae
-
-| Formula | Description |
-|---------|-------------|
-| [calctokens](./Formula/calctokens.rb) | Token usage report from Tokscale with K/M/B units & RMB conversion |
-
-## Uninstall
-
-```bash
-brew uninstall calctokens
-brew untap aiyouwolegequ/homebrew-calctokens
+brew upgrade aiyouwolegequ/calctokens/calctokens
 ```
