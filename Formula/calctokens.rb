@@ -12,10 +12,7 @@ class Calctokens < Formula
   end
 
   def install
-    bin_path = Pathname.new(prefix)/"bin"/"calctokens"
-    bin_path.parent.mkpath
-    FileUtils.cp(cached_download, bin_path)
-    bin_path.chmod(0755)
+    bin.install cached_download
   end
 
   test do
