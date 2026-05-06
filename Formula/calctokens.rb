@@ -13,6 +13,7 @@ class Calctokens < Formula
 
   def install
     target = bin/"calctokens"
+    bin.mkpath
     rm_f target
     FileUtils.cp(cached_download, target)
     chmod(0755, target)
