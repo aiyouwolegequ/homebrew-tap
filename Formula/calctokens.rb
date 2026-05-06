@@ -12,7 +12,7 @@ class Calctokens < Formula
   end
 
   def install
-    bin.install cached_download
+    bin.install cached_download, "calctokens"
   end
 
   test do
