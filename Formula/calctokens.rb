@@ -1,7 +1,7 @@
 class Calctokens < Formula
   desc "Token usage report powered by tokscale-core with K/M/B units & RMB conversion"
   homepage "https://github.com/aiyouwolegequ/CalcTokens"
-  version "0.6.4"
+  version "0.7.0"
 
   if OS.mac? && Hardware::CPU.arm?
     url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.6.4/calctokens-macos-arm64",
