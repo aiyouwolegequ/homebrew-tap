@@ -1,16 +1,16 @@
 class Calctokens < Formula
   desc "Token usage report powered by tokscale-core with K/M/B units & RMB conversion"
   homepage "https://github.com/aiyouwolegequ/CalcTokens"
-  version "0.7.0"
+  version "0.7.1"
 
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.7.0/calctokens-macos-arm64",
-      tag: "v0.7.0"
-    sha256 "f8229d30a242275bd4429766ce81fd5f3840f1b23d14af880fea22417f916523"
+    url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.7.1/calctokens-macos-arm64",
+      tag: "v0.7.1"
+    sha256 "a14c71524654b292578a67ae2522c58d8cddd0ddb3b41e52aebba2813479fa86"
   else
-    url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.7.0/calctokens",
-      tag: "v0.7.0"
-    sha256 "50e94be2426cd0e34ed8280d4bd964e7ec30f40cea31f255b3c588a01d3dbc80"
+    url "https://github.com/aiyouwolegequ/CalcTokens/releases/download/v0.7.1/calctokens",
+      tag: "v0.7.1"
+    sha256 "418cd73363a968022d34e61485a416b1f6a57029580ebe52f876889bebe5b1aa"
   end
 
   def install
